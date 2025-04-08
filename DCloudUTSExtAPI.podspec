@@ -9,4 +9,7 @@ Pod::Spec.new do |s|
   # 直接指定 .xcframework 文件的位置
   s.vendored_frameworks = 'output/DCloudUTSExtAPI.xcframework'
   s.platform         = :ios, '12.0'
+  # 明确指定支持的架构
+  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
